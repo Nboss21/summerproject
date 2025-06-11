@@ -1,88 +1,36 @@
+import React from "react";
 
-
-function Card() {
-    const movies = [
-      {
-        name: "Antman & The Wasp Quantumania",
-        rating: "4.6",
-        image: "/src/assets/Image (13).png",
-        genre: "Action",
-      },
-      {
-        name: "Air; Courting A Legend",
-        rating: "4.6",
-        image: "/src/assets/Image (3).png",
-        genre: "Action",
-      },
-      {
-        name: "John Wick: Chapter 4",
-        rating: "4.6",
-        image: "/src/assets/Image (4).png",
-        genre: "Action",
-      },
-      {
-        name: "Wednesday Season 1",
-        rating: "4.6",
-        image: "/src/assets/Image (4).png",
-        genre: "Action",
-      },
-      {
-        name: "Beef Series",
-        rating: "4.6",
-        image: "/src/assets/Image (5).png",
-        genre: "Action",
-      },
-      {
-        name: "Valhalla Murders Series",
-        rating: "4.6",
-        image: "/src/assets/Image (6).png",
-        genre: "Action",
-      },
-      {
-        name: "Toxic",
-        rating: "4.6",
-        image: "/src/assets/Image (7).png",
-        genre: "Action",
-      },
-      {
-        name: "Insider",
-        rating: "4.6",
-        image: "/src/assets/Image (8).png",
-        genre: "Action",
-      },
-      {
-        name: "Race Season 1",
-        rating: "4.6",
-        image: "/src/assets/Image (10).png",
-        genre: "Action",
-      },
-    ];
+const Card = ({
+  movie: { title, vote_average, poster_path, release_date, original_language },
+}) => {
   return (
-    <>
-      {movies.map((movies, index) => (
-        <div key={index} className="bg-[#1a1a2e] rounded-xl max-w-max object-cover p-2 shadow-md">
+    <div className="bg-gray-800  max-w-[200px] rounded-2xl shadow-md  p-2 hover:scale-105 transition-transform duration-300">
+      <img
+        src={
+          poster_path
+            ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+            : "/src/assets/images/No-poster.png"
+        }
+        alt={title}
+        className=" object-cover w-full h-72 rounded-md"
+      />
+      <div className="mt-3 text-white">
+        <h3 className="text-1xl textbase font-semibold leading-tight truncate">
+          {title}
+        </h3>
+        <div className="flex items-center gap-2 text-blue-400 text-xs mt-1">
           <img
-            src={movies.image}
-            alt={movies.name}
-            className="w-full h-48 object-cover rounded-md"
+            src="/src/assets/images/Star.svg"
+            alt="rating"
+            className="w-4 h-4"
           />
-          <div className="mt-3 text-white">
-            <h3 className="text-md font-semibold leading-tight">
-              {movies.name}
-            </h3>
-            <div className="flex items-center gap-1 text-yellow-400 text-sm mt-1">
-              
-              <span>{movies.rating}</span>
-              <span className="text-gray-400">•</span>
-              <span>{movies.genre}</span>
-              <span className="text-gray-400">•</span>
-              <span>Movie</span>
-            </div>
-          </div>
+          <p>{vote_average ? vote_average.toFixed(1) : "N/A"}</p>
+          <span className="text-gray-500">•</span>
+          <p>{release_date ? release_date.split("-")[0] : "N/A"}</p>
         </div>
-      ))}
-    </>
+      </div>
+    </div>
   );
-}
+};
 
 export default Card;
