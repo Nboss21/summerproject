@@ -20,15 +20,15 @@ function App() {
   return (
     <>
       {" "}
-      <Router>
+      {/* <Router>
         <Routes>
-          <Route>
+          <Route> */}
             <main>
               <Home />
             </main>
-          </Route>
+          {/* </Route>
         </Routes>
-      </Router>
+      </Router> */}
     </>
   );
 }
