@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react'
 import Card from './Card';
 import Search from './Search';
 import {useDebounce } from 'react-use'
-import { updateSearchCount } from '../appwrite';
+import {  updateSearchCount } from '../appwrite';
 
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -24,7 +24,7 @@ function Home() {
  const [isLoading,setIsLoading]=useState(false)
  const [errorMessage,setErrorMessage]=useState('')
  const [debouncedSearchTerm,setDebouncedSeachTerm]=useState()
-
+//  const [trendingMovies,setTrendingMovies] = useState([])
  useDebounce(()=>setDebouncedSeachTerm(searchTerm), 500 ,[searchTerm])
   const fetchMovies = async (query='') => {
  setIsLoading(true);
@@ -63,12 +63,25 @@ if(query && data.results.length>0){
      setIsLoading(false);
   }
   };
-  
+  const loadTrendingMovies =async ()=>{
+   try{
+const movies=await getTrendingMovies();
+setTrendingMovies( movies);
+   }catch(error){
+    console.error(`error trending: ${error}`)
+   }
+
+
+
+  }
   useEffect(
     ()=>{
 fetchMovies(debouncedSearchTerm)
     },[debouncedSearchTerm]
   );
+  // useEffect(()=>(
+  //    loadTrendingMovies()
+  // ))
   return (
     <section className="bg-[url('/src/assets/images/BG.png')] min-h-screen p-10 ">
       <div className="mx-11 flex justify-center ">
@@ -83,14 +96,19 @@ fetchMovies(debouncedSearchTerm)
           Without the Hassle
         </h1>
         <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        <h1 className="text-white  text-3xl">{searchTerm}</h1>
+        
       </div>
-      <div className="max-w-7xl mx-auto px-4">
+      <section className='px-21'>
         <h1 className="text-white text-2xl">Trending</h1>
-        <div></div>
-      </div>
+              <div>
 
-      <div className=" max-w-7xl mx-auto px-4 grid-cols-5 justify-center ">
+      </div>
+      
+      
+      
+      </section>
+        
+       <div className=" max-w-7xl mx-auto  grid-cols-5 justify-center ">
         <h1 className="text-2xl my-3 text-white ">Popular</h1>
       </div>
 

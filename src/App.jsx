@@ -19,9 +19,16 @@ function App() {
 
   return (
     <>
-      <main>
-        <Home />
-      </main>
+      {" "}
+      <Router>
+        <Routes>
+          <Route>
+            <main>
+              <Home />
+            </main>
+          </Route>
+        </Routes>
+      </Router>
     </>
   );
 }
