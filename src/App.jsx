@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { useStatev } from 'react'
 import './App.css'
 import Home from './Components/Home';
+import { Route, Router, Routes } from 'react-router-dom';
+import Details from './Components/Detail';
 const Card =({title})=>{
   const [hasliked,setHasLicked]=useState(false);
   useEffect(()=>{
@@ -19,16 +21,12 @@ function App() {
 
   return (
     <>
-      {" "}
-      {/* <Router>
-        <Routes>
-          <Route> */}
-            <main>
-              <Home />
-            </main>
-          {/* </Route>
-        </Routes>
-      </Router> */}
+      <Routes>
+        <Route path="/Details" element={<Details/>}></Route>
+        <Route path="/" element={  <Home />}></Route>
+      </Routes>
+
+      
     </>
   );
 }
