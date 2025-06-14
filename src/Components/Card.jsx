@@ -11,7 +11,7 @@ const Card = ({
           src={
             poster_path
               ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-              : "/src/assets/images/No-poster.png"
+              : "/images/No-poster.png"
           }
           alt={title}
           className=" object-cover w-full h-72 rounded-md"
@@ -22,7 +22,7 @@ const Card = ({
           </h3>
           <div className="flex items-center gap-2 text-blue-400 text-xs mt-1">
             <img
-              src="/src/assets/images/Star.svg"
+              src="/images/Star.svg"
               alt="rating"
               className="w-4 h-4"
             />

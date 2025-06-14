@@ -89,13 +89,13 @@ fetchMovies(debouncedSearchTerm)
   //    loadTrendingMovies()
   // ))
   return (
-    <div className="bg-[url('/src/assets/images/BG.png')] min-h-screen p-8">
+    <div className="bg-[url('/images/BG.png')] min-h-screen p-8">
       <section className="">
         <div className="mx-11 flex justify-center ">
-          <img src="/src/assets/images/logo.png" alt="" />
+          <img src="/images/logo.png" alt="" />
         </div>
         <div className="mx-11 flex justify-center">
-          <img src="/src/assets/images/hero-img.png" alt="" />
+          <img src="/images/hero-img.png" alt="" />
         </div>
         <div className="mx-11 justify-center ">
           <h1 className=" text-3xl text-amber-50 text-center ">

@@ -52,7 +52,7 @@ fetchDetails()
           </div>
         </div>
         <div className="flex gap-4">
-          <img src="/src/assets/images/image (18).png" alt="" />
+          <img src="/images/image (18).png" alt="" />
           <iframe
             width="800"
             height="500"
@@ -69,11 +69,11 @@ fetchDetails()
       <section className=" my-9">
         <div className="flex justify-evenly">
           <h1 className="text-[#A8B5DB]">Generes</h1>
-          <h2 className="bg-[#221F3D] w-117px text-white">Adventure</h2>
+          <h2 className="bg-[#221F3D] w-117px text-white p-1">Adventure</h2>
           <h2>Action</h2>
           <h2>Drama</h2>
           <div className="gap-8">
-            <a href="/" className="text-black bg-purple-600">
+            <a href="/" className="text-black bg-purple-600 p-2 rounded-2xl text-white">
               Visit Homepage
             </a>
           </div>
