@@ -73,7 +73,7 @@ fetchDetails()
           <h2>Action</h2>
           <h2>Drama</h2>
           <div className="gap-8">
-            <a href="/" className="text-black bg-purple-600 p-2 rounded-2xl text-white">
+            <a href="/" className=" bg-purple-600 p-2 rounded-2xl text-white">
               Visit Homepage
             </a>
           </div>
